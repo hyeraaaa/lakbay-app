@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Toyota Camry",
+    "price": 25000,
+    "location": "Manila, Philippines",
+    "image": "assets/toyota_camry.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "Honda Civic",
+    "price": 22000,
+    "location": "Cebu City, Philippines",
+    "image": "assets/toyota_camry.jpeg"
+  },
+  {
+    "id": 3,
+    "name": "Ford Mustang",
+    "price": 45000,
+    "location": "Makati, Philippines",
+    "image": "assets/toyota_camry.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "BMW 3 Series",
+    "price": 55000,
+    "location": "Quezon City, Philippines",
+    "image": "assets/toyota_camry.jpeg"
+  },
+  {
+    "id": 5,
+    "name": "Mercedes-Benz C-Class",
+    "price": 60000,
+    "location": "Davao City, Philippines",
+    "image": "assets/toyota_camry.jpeg"
+  },
+  {
+    "id": 6,
+    "name": "Nissan Altima",
+    "price": 23000,
+    "location": "Iloilo City, Philippines",
+    "image": "assets/toyota_camry.jpeg"
+  },
+  {
+    "id": 7,
+    "name": "Audi A4",
+    "price": 52000,
+    "location": "Baguio City, Philippines",
+    "image": "assets/toyota_camry.jpeg"
+  },
+  {
+    "id": 8,
+    "name": "Hyundai Sonata",
+    "price": 21000,
+    "location": "Bacolod City, Philippines",
+    "image": "assets/toyota_camry.jpeg"
+  },
+  {
+    "id": 9,
+    "name": "Lexus ES",
+    "price": 65000,
+    "location": "Cagayan de Oro, Philippines",
+    "image": "assets/toyota_camry.jpeg"
+  },
+  {
+    "id": 10,
+    "name": "Mazda 6",
+    "price": 28000,
+    "location": "Zamboanga City, Philippines",
+    "image": "assets/toyota_camry.jpeg"
+  }
+] 
