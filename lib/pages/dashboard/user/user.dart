@@ -8,6 +8,7 @@ import 'package:lakbay_app_1/models/account.dart';
 import 'profile.dart';
 import 'notification.dart';
 import 'items.dart';
+import 'search.dart';
 
 class UserDashboardPage extends StatefulWidget {
   final Account? user;
@@ -78,7 +79,10 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
           IconButton(
             icon: Icon(Icons.search_rounded, color: Colors.black),
             onPressed: () {
-              // TODO: Implement search action
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SearchPage()),
+              );
             },
           ),
           IconButton(
