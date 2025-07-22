@@ -1,4 +1,7 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:lakbay_app_1/models/account.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -18,6 +21,12 @@ class _LoginFormState extends State<LoginForm> {
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
+  }
+
+  Future<List<Account>> loadAccounts() async {
+    final String response = await rootBundle.loadString('assets/acounts.json');
+    final List<dynamic> data = json.decode(response);
+    return data.map((json) => Account.fromJson(json)).toList();
   }
 
   @override
@@ -140,9 +149,35 @@ class _LoginFormState extends State<LoginForm> {
                         borderRadius: BorderRadius.circular(30),
                       ),
                     ),
-                    onPressed: () {
+                    onPressed: () async {
                       if (_formKey.currentState!.validate()) {
-                        // TODO: Implement login logic
+                        final accounts = await loadAccounts();
+                        final email = _emailController.text.trim();
+                        final password = _passwordController.text;
+
+                        Account? user;
+                        try {
+                          user = accounts.firstWhere(
+                            (acc) =>
+                                acc.email == email && acc.password == password,
+                          );
+                        } catch (e) {
+                          user = null;
+                        }
+
+                        if (user != null) {
+                          Navigator.pushReplacementNamed(
+                            context,
+                            '/dashboard',
+                            arguments: user,
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Invalid email or password'),
+                            ),
+                          );
+                        }
                       }
                     },
                     child: const Text(

@@ -69,8 +69,9 @@ class ItemCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment:
-                      MainAxisAlignment.end, // Pushes content to bottom
+                      MainAxisAlignment.start, // Changed from end to start
                   children: [
+                    const SizedBox(height: 8), // Add some top spacing
                     Text(
                       item.name,
                       style: const TextStyle(

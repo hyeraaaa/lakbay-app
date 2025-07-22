@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Welcome to Lakbay!",
+    "message": "Your journey starts here. Check out the latest cars and offers.",
+    "timestamp": "2024-06-01T10:00:00Z"
+  },
+  {
+    "id": 2,
+    "title": "Booking Confirmed",
+    "message": "Your booking for a Toyota Vios has been confirmed. Safe travels!",
+    "timestamp": "2024-06-02T14:30:00Z"
+  },
+  {
+    "id": 3,
+    "title": "Special Offer!",
+    "message": "Get 10% off on your next booking. Use code LAKBAY10 at checkout.",
+    "timestamp": "2024-06-03T09:00:00Z"
+  },
+  {
+    "id": 4,
+    "title": "Profile Updated",
+    "message": "Your profile information was successfully updated.",
+    "timestamp": "2024-06-04T16:45:00Z"
+  },
+  {
+    "id": 5,
+    "title": "New Car Added",
+    "message": "A new Honda Civic is now available for booking in your area.",
+    "timestamp": "2024-06-05T11:20:00Z"
+  }
+]

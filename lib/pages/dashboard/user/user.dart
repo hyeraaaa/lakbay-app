@@ -4,9 +4,14 @@ import '../../../models/item.dart';
 import '../../../services/item_service.dart';
 import '../../../widgets/item_card.dart';
 import '../../../widgets/advertisement_card.dart';
+import 'package:lakbay_app_1/models/account.dart';
+import 'profile.dart';
+import 'notification.dart';
+import 'items.dart';
 
 class UserDashboardPage extends StatefulWidget {
-  const UserDashboardPage({super.key});
+  final Account? user;
+  const UserDashboardPage({super.key, this.user});
 
   @override
   State<UserDashboardPage> createState() => _UserDashboardPageState();
@@ -15,6 +20,7 @@ class UserDashboardPage extends StatefulWidget {
 class _UserDashboardPageState extends State<UserDashboardPage> {
   List<Item> items = [];
   bool isLoading = true;
+  int _currentIndex = 0;
 
   @override
   void initState() {
@@ -34,6 +40,27 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
         isLoading = false;
       });
       print('Error loading items: $e');
+    }
+  }
+
+  void _onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+    if (index == 0) {
+      // Already on Home
+    } else if (index == 1) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => NotificationPage(user: widget.user),
+        ),
+      );
+    } else if (index == 2) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => ProfilePage(user: widget.user)),
+      );
     }
   }
 
@@ -70,14 +97,7 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Available Cars',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
+                  // Removed welcome user and available cars text
                   const SizedBox(height: 16),
                   Expanded(
                     child: MasonryGridView.count(
@@ -97,11 +117,13 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
                           return ItemCard(
                             item: item,
                             onTap: () {
-                              // TODO: Navigate to item details
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text('Selected: ${item.name}'),
-                                  duration: const Duration(seconds: 1),
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ItemDetailPage(
+                                    item: item,
+                                    user: widget.user,
+                                  ),
                                 ),
                               );
                             },
@@ -114,6 +136,8 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
               ),
             ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: _onTabTapped,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
@@ -125,7 +149,6 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
         backgroundColor: Colors.white,
-        // TODO: Implement navigation logic and state management
       ),
     );
   }

@@ -68,5 +68,12 @@
     "price": 28000,
     "location": "Zamboanga City, Philippines",
     "image": "assets/toyota_camry.jpeg"
+  },
+  {
+    "id": 11,
+    "name": "Mazda 5",
+    "price": 28000,
+    "location": "Zamboanga City, Philippines",
+    "image": "assets/toyota_camry.jpeg"
   }
 ] 

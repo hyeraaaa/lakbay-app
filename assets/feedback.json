@@ -1,0 +1,15 @@
+[
+  { "itemId": 1, "userId": 101, "rating": 5, "comment": "Great car, very clean and smooth ride!", "date": "2024-06-01" },
+  { "itemId": 1, "userId": 102, "rating": 4, "comment": "Owner was responsive and helpful.", "date": "2024-06-02" },
+  { "itemId": 2, "userId": 103, "rating": 3, "comment": "Car was okay, but pickup was delayed.", "date": "2024-06-03" },
+  { "itemId": 2, "userId": 104, "rating": 5, "comment": "Excellent experience, would rent again!", "date": "2024-06-04" },
+  { "itemId": 3, "userId": 105, "rating": 4, "comment": "Clean and reliable vehicle.", "date": "2024-06-05" },
+  { "itemId": 4, "userId": 106, "rating": 2, "comment": "Car was not as described.", "date": "2024-06-06" },
+  { "itemId": 5, "userId": 107, "rating": 5, "comment": "Perfect for our family trip!", "date": "2024-06-07" },
+  { "itemId": 6, "userId": 108, "rating": 3, "comment": "Average, but got the job done.", "date": "2024-06-08" },
+  { "itemId": 7, "userId": 109, "rating": 4, "comment": "Smooth ride and easy pickup.", "date": "2024-06-09" },
+  { "itemId": 8, "userId": 110, "rating": 5, "comment": "Amazing car, highly recommend!", "date": "2024-06-10" },
+  { "itemId": 9, "userId": 111, "rating": 2, "comment": "Had some issues with the brakes.", "date": "2024-06-11" },
+  { "itemId": 10, "userId": 112, "rating": 4, "comment": "Good value for the price.", "date": "2024-06-12" },
+  { "itemId": 11, "userId": 113, "rating": 5, "comment": "Best rental experience so far!", "date": "2024-06-13" }
+] 
